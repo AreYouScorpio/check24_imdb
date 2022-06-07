@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" , xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Film application</title>
+</head>
+<body>
+<h1> Ratings of films </h1>
+
+<ul>
+    <li th:each="rating : ${ratings}">
+        <span th:text="${rating.id}">id</span>
+        <span th:text="${rating.imdbUser.userName}">user</span>
+        <span th:text="${rating.film.title}">film</span>
+    </li>
+</ul>
+
+
+<!--
+
+TBD
+
+<form th:action="@{/ratings}" method="post" th:object="${newRating}">
+    Id: <input th:field="*{id}" /> <br/>
+    User:<input th:field="*{imdbUser}" /> <br/>
+    Film:<input th:field="*{film}" /> <br/>
+    <input type="submit" value="Add" />
+</form>
+
+</body>
+</html>

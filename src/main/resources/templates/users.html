@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en", xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Film application</title>
+</head>
+<body>
+    <h1> User list </h1>
+
+    <ul>
+        <li th:each="user : ${users}">
+            <span th:text="${user.id}">id</span>
+            <span th:text="${user.userName}">name</span>
+        </li>
+    </ul>
+
+<form th:action="@{/users}" method="post" th:object="${newUser}">
+    Id: <input th:field="*{id}" /> <br/>
+    User name:<input th:field="*{userName}" /> <br/>
+    <input type="submit" value="Add" />
+</form>
+
+</body>
+</html>
